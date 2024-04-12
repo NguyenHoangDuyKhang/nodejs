@@ -1,0 +1,226 @@
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-light bg-body-tertiary">
+    <!-- Container wrapper -->
+    <div class="container-fluid">
+        <!-- Toggle button -->
+        <button data-mdb-collapse-init class="navbar-toggler" type="button" data-mdb-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="fas fa-bars"></i>
+        </button>
+
+        <!-- Collapsible wrapper -->
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <!-- Navbar brand -->
+            <a class="navbar-brand mt-2 mt-lg-0" href="#">
+                <img src="https://phunugioi.com/wp-content/uploads/2021/11/Hinh-anh-cuon-sach-mo-ra-minh-hoa.jpg"
+                    height="30" alt="MDB Logo" loading="lazy" />
+            </a>
+            <!-- Left links -->
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link" href="/home">Trang Chủ</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/products">Sản Phẩm</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/post">Bài Viết</a>
+                </li>
+            </ul>
+            <!-- Left links -->
+        </div>
+        <!-- Collapsible wrapper -->
+
+        <!-- Right elements -->
+        <div class="d-flex align-items-center">
+            <!-- Login / Register-->
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a href='' class="nav-link" data-mdb-ripple-init data-mdb-modal-init
+                    data-mdb-target="#exampleModal" style="color: black;">Đăng nhập</a>
+                </li>
+                <!-- <li class="nav-item">
+                    <a href='' class="nav-link" data-mdb-ripple-init data-mdb-modal-init
+            data-mdb-target="#Register" style="color: black;">Đăng ký</a>
+                </li> -->
+
+                <li class="nav-item">
+                    <a href="/cart"  class="nav-link" style="color: black;"><i class="fa-solid fa-cart-shopping"></i></a>
+                </li>
+            </ul>
+
+
+          
+
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Đăng nhập</h5>
+                            <button type="button" class="btn-close" data-mdb-ripple-init data-mdb-dismiss="modal"
+                                aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <form method="post" enctype="multipart/form-data">
+                                <!-- Email input -->
+                                <div data-mdb-input-init class="form-outline mb-4">
+                                    <input type="email" id="email" class="form-control" name="email" />
+                                    <label class="form-label" for="form2Example1">Email</label>
+                                </div>
+
+                                <!-- Password input -->
+                                <div data-mdb-input-init class="form-outline mb-4">
+                                    <input type="password" id="password" class="form-control" name="password"/>
+                                    <label class="form-label" for="form2Example2">Mật khẩu</label>
+                                </div>
+
+                                <!-- 2 column grid layout for inline styling -->
+                                <div class="row mb-4">
+                                    <div class="col d-flex justify-content-center">
+                                        <!-- Checkbox -->
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value="" id="form2Example34"
+                                                checked />
+                                            <label class="form-check-label" for="form2Example34"> Ghi nhớ tôi </label>
+                                        </div>
+                                    </div>
+
+                                    <div class="col">
+                                        <!-- Simple link -->
+                                        <a href="#!">Quên mật khẩu?</a>
+                                    </div>
+                                </div>
+
+                                <!-- Submit button -->
+                                <button data-mdb-ripple-init type="submit" class="btn btn-primary btn-block mb-4">Đăng nhập</button>
+
+                                <!-- Register buttons -->
+                                <div class="text-center">
+                                    <p>Bạn không có tài khoản? <a href="#!" data-mdb-ripple-init data-mdb-modal-init
+                                        data-mdb-target="#Register">Đăng ký ngay</a></p>
+                                    <p>Hoặc đăng nhập với:</p>
+                                    <button data-mdb-ripple-init type="button"
+                                        class="btn btn-secondary btn-floating mx-1">
+                                        <i class="fab fa-facebook-f"></i>
+                                    </button>
+
+                                    <button data-mdb-ripple-init type="button"
+                                        class="btn btn-secondary btn-floating mx-1">
+                                        <i class="fab fa-google"></i>
+                                    </button>
+
+                                    <button data-mdb-ripple-init type="button"
+                                        class="btn btn-secondary btn-floating mx-1">
+                                        <i class="fab fa-twitter"></i>
+                                    </button>
+
+                                    <button data-mdb-ripple-init type="button"
+                                        class="btn btn-secondary btn-floating mx-1">
+                                        <i class="fab fa-github"></i>
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- đăng ký -->
+            <div class="modal fade" id="Register" tabindex="-1" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Đăng ký</h5>
+                        <button type="button" class="btn-close" data-mdb-ripple-init data-mdb-dismiss="modal"
+                            aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form  method="post" enctype="multipart/form-data">
+                            <!-- Email input -->
+                            <div data-mdb-input-init class="form-outline mb-4">
+                                <input type="text" id="form2Example1" class="form-control" />
+                                <label class="form-label" for="form2Example1">Tên đăng nhập</label>
+                            </div>
+
+                            <!-- Password input -->
+                            <div data-mdb-input-init class="form-outline mb-4">
+                                <input type="password" id="form2Example2" class="form-control" />
+                                <label class="form-label" for="form2Example2">Mật khẩu</label>
+                            </div>
+
+                            <div data-mdb-input-init class="form-outline mb-4">
+                                <input type="password" id="form2Example3" class="form-control" />
+                                <label class="form-label" for="form2Example3">Xác nhận mật khẩu</label>
+                            </div>
+
+                            <!-- 2 column grid layout for inline styling -->
+                            <div class="row mb-4">
+                                <div class="col d-flex justify-content-center">
+                                    <!-- Checkbox -->
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="" id="form2Example34"
+                                            checked />
+                                        <label class="form-check-label" for="form2Example34"> Ghi nhớ tôi </label>
+                                    </div>
+                                </div>
+
+                                <div class="col">
+                                    <!-- Simple link -->
+                                    <a href="#!">Quên mật khẩu</a>
+                                </div>
+                            </div>
+
+                            <!-- Submit button -->
+                            <button data-mdb-ripple-init type="submit" class="btn btn-primary btn-block mb-4">Đăng ký</button>
+
+                            <!-- Register buttons -->
+                            <div class="text-center">
+                                <p>Bạn đã là thành viên? <a href="#!"  data-mdb-ripple-init data-mdb-modal-init
+                                    data-mdb-target="#exampleModal" >Đăng nhập</a></p>
+                                <p>Hoặc đăng nhập với:</p>
+                                <button data-mdb-ripple-init type="button"
+                                    class="btn btn-secondary btn-floating mx-1">
+                                    <i class="fab fa-facebook-f"></i>
+                                </button>
+
+                                <button data-mdb-ripple-init type="button"
+                                    class="btn btn-secondary btn-floating mx-1">
+                                    <i class="fab fa-google"></i>
+                                </button>
+
+                                <button data-mdb-ripple-init type="button"
+                                    class="btn btn-secondary btn-floating mx-1">
+                                    <i class="fab fa-twitter"></i>
+                                </button>
+
+                                <button data-mdb-ripple-init type="button"
+                                    class="btn btn-secondary btn-floating mx-1">
+                                    <i class="fab fa-github"></i>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+            <!-- Icon -->
+            <!-- <a class="link-secondary me-3" href="#">
+                <i class="fas fa-shopping-cart"></i>
+            </a> -->
+            <!-- Avatar -->
+            <!-- <div class="">
+                <a data-mdb-dropdown-init class="dropdown-toggle d-flex align-items-center hidden-arrow" href="#"
+                    id="navbarDropdownMenuAvatar" role="button" aria-expanded="false">
+                    <img src="https://mdbcdn.b-cdn.net/img/new/avatars/2.webp" class="rounded-circle" height="25"
+                        alt="Black and White Portrait of a Man" />
+                </a>
+            </div> -->
+        </div>
+        <!-- Right elements -->
+    </div>
+    <!-- Container wrapper -->
+</nav>
+<!-- Navbar -->

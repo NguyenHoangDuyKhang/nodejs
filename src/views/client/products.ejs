@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>sản phẩm</title>
+    <%- include('./../../components/head.ejs'); %>
+</head>
+
+<body>
+    <header>
+        <%- include('./../../components/header.ejs'); %>
+    </header>
+    <main>
+        <div class="container mt-4">
+            <div class="row col-12">
+                <div class="row">
+
+                    <!-- //list danh mục -->
+                    <div class="col-lg-3">
+                        <div class="list-group list-group-light" id="list-tab" role="tablist">
+                            <a class="list-group-item list-group-item-action active px-3 border-0" id="list-home-list"
+                                data-mdb-list-init href="#list-home" role="tab" aria-controls="list-home">Tất cả sản
+                                phẩm</a>
+                            <a class="list-group-item list-group-item-action px-3 border-0" id="list-profile-list"
+                                data-mdb-list-init href="#list-profile" role="tab" aria-controls="list-profile">Giảm giá
+                                sóc</a>
+                            <a class="list-group-item list-group-item-action px-3 border-0" id="list-messages-list"
+                                data-mdb-list-init href="#list-messages" role="tab" aria-controls="list-messages">Văn
+                                học Việt</a>
+                            <a class="list-group-item list-group-item-action px-3 border-0" id="list-settings-list"
+                                data-mdb-list-init href="#list-settings" role="tab" aria-controls="list-settings">Văn
+                                học nước ngoài</a>
+                            <a class="list-group-item list-group-item-action px-3 border-0" id="list-novel-list"
+                                data-mdb-list-init href="#list-novel" role="tab" aria-controls="list-novel">Tiểu
+                                thuyết</a>
+                        </div>
+                    </div>
+
+
+                    <!-- //list hiển thị tương ứng -->
+                    <div class="col-lg-9">
+                        <div class="tab-content" id="nav-tabContent">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-lg-8"></div>
+                                    <div class="col-lg-4">
+                                        <div class="input-group">
+                                            <div id="search-autocomplete" class="form-outline" data-mdb-input-init>
+                                                <input type="search" id="form1" class="form-control" />
+                                                <label class="form-label" for="form1">Tìm sản phẩm...</label>
+                                            </div>
+                                            <button type="button" class="btn btn-primary" data-mdb-ripple-init>
+                                                <i class="fas fa-search"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade show active" id="list-home" role="tabpanel"
+                                aria-labelledby="list-home-list">
+                                <div class="row m-3 p-3 col-12  d-flex justify-content-center">
+                                    <% for(var i=0; i < data.length; i++) { %>
+                                        <div class="card col-sm-3 m-4 border border-danger hover-zoom">
+                                            <a href="/product_details/<%=data[i].id%>">
+                                                <img src="../../public/img/<%=data[i].img%> " class="card-img-top"
+                                                    alt="Skyscrapers" />
+                                            </a>
+                                            <div class="card-body">
+                                                <h5 class="card-title">
+                                                    <%=data[i].name %>
+                                                </h5>
+                                                <del><span class="card-text">Giá: <span style="color: red;">
+                                                            <%=data[i].price.toLocaleString('vi-VN', {style: 'currency'
+                                                                , currency: 'VND' }) %>
+                                                        </span></span></del>
+                                                <div class="card-text">Giá giảm: <span style="color: red;">
+                                                        <%=data[i].sale_price.toLocaleString('vi-VN', {style: 'currency'
+                                                            , currency: 'VND' }) %>
+                                                    </span></div>
+                                            </div>
+                                            <div class="card-footer">
+                                                <a href="/products/<%=data[i].id%>" class="btn btn-primary "
+                                                    data-mdb-ripple-init>Mua</a>
+                                            </div>
+                                        </div>
+                                        <% } %>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="list-profile" role="tabpanel"
+                                aria-labelledby="list-profile-list">
+                                <div class="row m-3 p-3 col-12  d-flex justify-content-center">
+                                    <% for(var i=0; i < data_sale.length; i++) { %>
+                                        <div class="card col-sm-3 m-4 border border-danger hover-zoom">
+                                            <img src="../../public/img/<%=data_sale[i].img%> " class="card-img-top"
+                                                alt="Skyscrapers" />
+                                            <div class="card-body">
+                                                <h5 class="card-title">
+                                                    <%=data_sale[i].name %>
+                                                </h5>
+
+                                                <span class="card-text">Giá giảm: <span style="color: red;">
+                                                        <%=data_sale[i].price%>
+                                                    </span></span>
+                                            </div>
+                                            <div class="card-footer">
+                                                <a href="/products/<%=data_sale[i].id%>" class="btn btn-primary " data-mdb-ripple-init>Mua</a>
+                                            </div>
+                                        </div>
+                                        <% } %>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="list-messages" role="tabpanel"
+                                aria-labelledby="list-messages-list">
+                                <div class="row m-3 p-3 col-12  d-flex justify-content-center">
+                                    <% for(var i=0; i < data_VHVN.length; i++) { %>
+                                        <div class="card col-sm-3 m-4 border border-danger hover-zoom">
+                                            <img src="../../public/img/<%=data_VHVN[i].img%>"
+                                                class="card-img-top" alt="Skyscrapers" />
+                                            <div class="card-body">
+                                                <h5 class="card-title">
+                                                    <%=data_VHVN[i].name %>
+                                                </h5>
+
+                                                <span class="card-text">Giá giảm: <span style="color: red;">
+                                                        <%=data_VHVN[i].price %>
+                                                    </span></span>
+                                            </div>
+                                            <div class="card-footer">
+                                                <a href="/products/<%=data_VHVN[i].id%>" class="btn btn-primary " data-mdb-ripple-init>Mua</a>
+                                            </div>
+                                        </div>
+                                        <% } %>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="list-settings" role="tabpanel"
+                                aria-labelledby="list-settings-list">
+                                <div class="row m-3 p-3 col-12  d-flex justify-content-center">
+                                    <% for(var i=0; i < data_VHNG.length; i++) { %>
+                                        <div class="card col-sm-3 m-4 border border-danger hover-zoom">
+                                            <img src="../../public/img/<%=data_VHNG[i].img%>"
+                                                class="card-img-top" alt="Skyscrapers" />
+                                            <div class="card-body">
+                                                <h5 class="card-title">
+                                                    <%=data_VHNG[i].name %>
+                                                </h5>
+
+                                                <span class="card-text">Giá giảm: <span style="color: red;">
+                                                        <%=data_VHNG[i].price %>
+                                                    </span></span>
+                                            </div>
+                                            <div class="card-footer">
+                                                <a href="/products/<%=data_VHNG[i].id%>" class="btn btn-primary " data-mdb-ripple-init>Mua</a>
+                                            </div>
+                                        </div>
+                                        <% } %>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="list-novel" role="tabpanel"
+                                aria-labelledby="list-novel-list">
+                                <div class="row m-3 p-3 col-12  d-flex justify-content-center">
+                                    <% for(var i=0; i < data_TT.length; i++) { %>
+                                        <div class="card col-sm-3 m-4 border border-danger hover-zoom">
+                                            <img src="../../public/img/<%=data_TT[i].img%>"
+                                                class="card-img-top" alt="Skyscrapers" />
+                                            <div class="card-body">
+                                                <h5 class="card-title">
+                                                    <%=data_TT[i].name %>
+                                                </h5>
+
+                                                <span class="card-text">Giá giảm: <span style="color: red;">
+                                                        <%=data_TT[i].price %>
+                                                    </span></span>
+                                            </div>
+                                            <div class="card-footer">
+                                                <a href="/products/<%=data_TT[i].id%>" class="btn btn-primary " data-mdb-ripple-init>Mua</a>
+                                            </div>
+                                        </div>
+                                        <% } %>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <%- include('./../../components/footer.ejs'); %>
+    </footer>
+    <!-- Bootstrap JavaScript Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+        integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+        crossorigin="anonymous"></script>
+    <script src="./../../public/js/cart.js"></script>
+</body>
+
+</html>

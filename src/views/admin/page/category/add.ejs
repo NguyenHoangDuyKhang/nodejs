@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Title</title>
+    <%- include('../../../../components/head.ejs'); %>
+        <link rel="stylesheet" href="../../css/style.css">
+</head>
+
+<body>
+
+    <header>
+        <%- include('../../components/header.ejs'); %>
+    </header>
+
+
+    <!--Main layout-->
+    <main style="margin-top: 58px">
+        <div class="container pt-4">
+            <!--Section: Sales Performance KPIs-->
+            <div class="container">
+                <div class="row col-lg-12">
+                    <div class="col-lg-9">
+                        <h4>Thêm danh mục</h4>
+                    </div>
+                    <div class="col-lg-3">
+                        <form class="d-none d-md-flex input-group w-auto my-auto">
+                            <input autocomplete="off" type="search" class="form-control rounded"
+                              placeholder='Tìm Kiếm...' style="min-width: 225px" />
+                            <span class="input-group-text border-0"><i class="fas fa-search"></i></span>
+                          </form>
+                    </div>
+                </div>
+            </div>
+
+            <section class="container mb-4 col-lg-12 d-flex justify-content-center align-items-center">
+                <div class="row mt-3 col-lg-6">
+                
+                    <h2>Thêm danh mục</h2>
+                    <form action="#" method="post">
+                      <div class="mb-3">
+                        <label for="name" class="form-label">Tên danh mục:</label>
+                        <input type="text" class="form-control" id="name" name="name" required>
+                      </div>
+                      
+                      <button type="submit" class="btn btn-primary">Thêm</button>
+                    </form>
+                 
+                </div>
+            </section>
+            <div class="row mb-5">
+                <div class="col-lg-10"></div>
+                <div class="col-lg-2"><a href="/admin/category" class="btn btn-outline-primary" data-mdb-ripple-init data-mdb-ripple-color="dark"><-- Trở lại</a></div>
+            </div>
+        </div>
+    </main>
+    <!--Main layout-->
+    <footer>
+        <!-- place footer here -->
+    </footer>
+    <!-- Bootstrap JavaScript Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+        integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+        crossorigin="anonymous"></script>
+    <script src="../js/admin.js"></script>
+</body>
+
+</html>

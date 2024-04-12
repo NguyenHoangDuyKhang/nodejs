@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Title</title>
+    <%- include('../../../../components/head.ejs'); %>
+    <link rel="stylesheet" href="../../css/style.css">
+</head>
+
+<body>
+
+    <header>
+        <%- include('../../components/header.ejs'); %>
+    </header>
+
+
+    <!--Main layout-->
+    <main style="margin-top: 58px">
+        <div class="container pt-4">
+            <!--Section: Sales Performance KPIs-->
+            <div class="container">
+                <div class="row col-lg-12">
+                    <div class="col-lg-9">
+                        <h4>Sửa sản phẩm</h4>
+                    </div>
+                    <div class="col-lg-3">
+                        <form class="d-none d-md-flex input-group w-auto my-auto">
+                            <input autocomplete="off" type="search" class="form-control rounded"
+                              placeholder='Tìm Kiếm...' style="min-width: 225px" />
+                            <span class="input-group-text border-0"><i class="fas fa-search"></i></span>
+                          </form>
+                    </div>
+                </div>
+            </div>
+
+            <section class="container mb-4 col-lg-12 d-flex justify-content-center align-items-center">
+                <div class="row mt-3 col-lg-12">
+                <div class="col-8">
+                    <h2>Sửa sản phẩm</h2>
+                    <form action="" method="post" enctype="multipart/form-data">
+                      <div class="mb-3">
+                        <label for="ten_san_pham" class="form-label">Tên sản phẩm:<%=item.name%></label>
+                        <input type="text" class="form-control" id="ten_san_pham" name="ten_san_pham" value="<%=item.name%>" required>
+                      </div>
+                      <select class="form-select" aria-label="Default select example" name="categories">
+                        <% for(var i=0; i < data_cate.length; i++) { %>
+                        <option value="<%=data_cate[i].id%>"><%=data_cate[i].name%></option>
+                        <% } %>
+                      </select>
+                      <div class="mb-3">
+                        <label for="gia" class="form-label">Giá:</label>
+                        <input type="number" class="form-control" id="price" name="price" value="<%=item.price%>" required>
+                      </div>
+                      <div class="mb-3">
+                        <label for="gia" class="form-label">Giá Giảm:</label>
+                        <input type="number" class="form-control" id="sale_price" name="sale_price" value="<%=item.sale_price%>" required>
+                      </div>
+                      <div class="mb-3">
+                        <input accept="image/*" type='file' id="hinh_anh" name="hinh_anh"/>
+                      </div>
+                      <div class="mb-3">
+                        <label for="mo_ta" class="form-label">Mô tả:</label>
+                        <textarea class="form-control" id="mo_ta" name="mo_ta" rows="3" value="" required><%=item.descripstion%></textarea>
+                      </div>
+                      <button type="submit" class="btn btn-primary">Sửa</button>
+                    </form>
+                </div>
+                <div class="col-4 d-flex flex-column justify-content-center align-items-center"> 
+                  <span>Xem trước ảnh</span>
+                  <img id="blah" src="./../../../../public/img/<%=item.img%>" alt="your image" width="100%"/>
+                </div>
+                </div>
+            </section>
+            <div class="row mb-5">
+                <div class="col-lg-10"></div>
+                <div class="col-lg-2"><a href="/admin/products" class="btn btn-outline-primary" data-mdb-ripple-init data-mdb-ripple-color="dark"><-- Trở lại</a></div>
+            </div>
+        </div>
+    </main>
+    <!--Main layout-->
+    <footer>
+        <!-- place footer here -->
+    </footer>
+    <!-- Bootstrap JavaScript Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+        integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+        crossorigin="anonymous"></script>
+    <!-- <script src="../js/admin.js"></script> -->
+    <script>
+      hinh_anh.onchange = evt => {
+    const [file] = hinh_anh.files
+    if (file) {
+      blah.src = URL.createObjectURL(file)
+    }
+  }
+    </script>
+</body>
+
+</html>

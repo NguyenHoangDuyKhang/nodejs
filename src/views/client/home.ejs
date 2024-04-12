@@ -1,0 +1,296 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <title>Trag chủ</title>
+  <%- include('./../../components/head.ejs'); %>
+</head>
+
+<body>
+  <header>
+    <%- include('./../../components/header.ejs'); %>
+  </header>
+  <main>
+    <%- include('./../../components/banner.ejs'); %>
+    <br />
+    <div class="container">
+      <div class="row col-12 border border-danger p-3">
+        <div class='col-lg-3'>
+          <h4 style="color: #f25529;">Sản phẩm khuyến mãi</h4>
+          <h4 id="countdown"></h4>
+        </div>
+        <div class=" row col-lg-9" data-aos="flip-left"
+        data-aos-easing="ease-out-cubic"
+        data-aos-duration="2000">
+          <% for(var i=0; i < data_Sale.length; i++) { %>
+            <div class="card col-lg-3  col-md-3 m-0 border border-info  hover-zoom">
+              <a href="/product_details/<%=data_Sale[i].id%>">
+              <img src="../img/<%=data_Sale[i].img %>" class="card-img-top"
+                width="100%" />
+              </a>
+              <div class="card-body">
+                <h5 class="card-title">
+                  <%=data_Sale[i].name %>
+                </h5>
+                <sapn class="card-text">Giá: <del>
+                    <%= data_Sale[i].price.toLocaleString('vi-VN', {style: 'currency', currency: 'VND'}) %>
+                  </del></sapn>
+                <span class="card-text">Giá giảm: <span style="color: red;">
+                  <%= data_Sale[i].sale_price.toLocaleString('vi-VN', {style: 'currency', currency: 'VND'}) %>
+                  </span></span>
+              </div>
+              <div class="card-footer">
+                <a href="/products/<%=data_Sale[i].id%>" class="btn btn-primary col-lg-12" data-mdb-ripple-init>Mua</a>
+              </div>
+            </div>
+            <% } %>
+        </div>
+      </div>
+    </div>
+    <br />
+    <div class="container"  data-aos="flip-up" data-aos-duration="1700">
+      <div class="row col-lg-12">
+        <img class="col-3" src="https://nhasachphuongnam.com/images/promo/274/Asset_25.png">
+        <img class="col-3" src="https://nhasachphuongnam.com/images/promo/274/Asset_23.png">
+        <img class="col-3" src="https://nhasachphuongnam.com/images/promo/274/Asset_22.png">
+        <img class="col-3" src="https://nhasachphuongnam.com/images/promo/274/Asset_24.png">
+      </div>
+    </div>
+    <br />
+
+    <div class="container">
+      <div class="row p-2 d-flex flex-row justify-content-center align-items-center">
+        <div class="col-lg-2"> <img src="https://nhasachphuongnam.com/images/promo/274/lego.png"
+            class="rounded-circle  mx-4" alt="">
+          <p class="mx-5">Lego</p>
+        </div>
+        <div class="col-lg-2"> <img src="https://nhasachphuongnam.com/images/promo/274/manga.png"
+            class="rounded-circle  mx-4" alt="">
+          <p class="mx-5">Manga</p>
+        </div>
+        <div class="col-lg-2"><img src="https://nhasachphuongnam.com/images/promo/274/puzzlr.png"
+            class="rounded-circle  mx-4" alt="">
+          <p class="mx-3">Jigsaw/Puzzle</p>
+        </div>
+        <div class="col-lg-2"><img src="https://nhasachphuongnam.com/images/promo/274/gift.png"
+            class="rounded-circle  mx-4" alt="">
+          <p class="mx-2">Gift Books For You</p>
+        </div>
+        <div class="col-lg-2"><img src="https://nhasachphuongnam.com/images/promo/274/teen.png"
+            class="rounded-circle  mx-4" alt="">
+          <p class="mx-2">Tiệc Sách Tuổi Teen</p>
+        </div>
+        <div class="col-lg-2"><img src="https://nhasachphuongnam.com/images/promo/274/s%C3%A1ch_c%C5%A9.png"
+            class="rounded-circle  mx-4" alt="...">
+          <p class="mx-2">Phiên Chợ Sách Cũ</p>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <h3>Bestsellers</h3>
+      <div class="row col-12 border  border-warning d-flex justify-content-center p-3" data-aos="zoom-out-up" data-aos-easing="ease-out-cubic"
+      data-aos-duration="2000">
+        <% for(var i=0; i < data_Bestsellers.length; i++) { %>
+          <div class="card col-lg-2 m-3 border-danger hover-zoom">
+            <a href="/product_details/<%=data_Bestsellers[i].id%>">
+            <img src="../img/<%=data_Bestsellers[i].img%>" class="card-img-top" alt="Skyscrapers"/>
+          </a>
+            <div class="card-body">
+              <h5 class="card-title">  <%=data_Bestsellers[i].name %></h5>
+              <p class="card-text">
+                Giá: <del>
+                  <%= data_Bestsellers[i].price.toLocaleString('vi-VN', {style: 'currency', currency: 'VND'}) %>
+                  </del>
+              </p>
+              <span class="card-text">Giá giảm: <span style="color: red;">
+                <%=data_Bestsellers[i].sale_price.toLocaleString('vi-VN', {style: 'currency', currency: 'VND'}) %>
+                </span></span>
+            </div>
+            <div class="card-footer">
+              <a href="/products/<%=data_Bestsellers[i].id%>" class="btn btn-primary col-lg-12" data-mdb-ripple-init>Mua</a>
+            </div>
+          </div>
+          <% } %>
+      </div>
+    </div>
+    <br>
+
+    <div class="container">
+      <h3> Văn học Việt Nam</h3>
+      <div class="row col-12 border  border-warning d-flex justify-content-center p-3 " data-aos="fade-down" data-aos-duration="1700">
+        <% for(var i=0; i < data_VHVN.length; i++) { %>
+          <div class="card col-lg-2 m-3 border-danger hover-zoom">
+            <a href="/product_details/<%=data_VHVN[i].id%>">
+            <img src="../img/<%=data_VHVN[i].img%>" class="card-img-top" alt="Skyscrapers"/>
+          </a>
+            <div class="card-body">
+              <h5 class="card-title">  <%=data_VHVN[i].name %></h5>
+              <p class="card-text">
+                Giá: <del>
+                  <%=data_VHVN[i].price.toLocaleString('vi-VN', {style: 'currency', currency: 'VND'}) %>
+                  </del>
+              </p>
+              <span class="card-text">Giá giảm: <span style="color: red;">
+                <%=data_VHVN[i].sale_price.toLocaleString('vi-VN', {style: 'currency', currency: 'VND'}) %>
+                </span></span>
+            </div>
+            <div class="card-footer row">
+              <a  href="/products/<%=data_VHVN[i].id%>" class="btn btn-primary col-lg-12" data-mdb-ripple-init>Mua</a>
+            
+            </div>
+          </div>
+          <% } %>
+      </div>
+    </div>
+ 
+    <br>
+    <div class="container">
+      <h2 style="text-align: center;">Về chúng tôi</h2>
+      <div class="row">
+        <section class="mb-2">
+          <div class="row gx-lg-5">
+            <div class="col-lg-6 mb-5">
+              <div class="d-flex align-items-start">
+                <div class="flex-shrink-0">
+                  <div class="p-3 badge-primary rounded-4">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                  </div>
+                </div>
+                <div class="flex-grow-1 ms-4">
+                  <p class="fw-bold mb-1">Mua hàng nhanh chóng</p>
+                  <p class="text-muted mb-1">
+                    Thao tác mua hàng tiện lợi chỉ với một nút bấm
+                  </p>
+
+                  <div class="collapse collapse-horizontal" id="collapseWidthExample">
+                    <div style="width: 300px;">
+                      Thao tác mua hàng đơn giản, dễ sử dung, đáp ứng tốt nhu cầu mua sắm của khách hàng
+                    </div>
+                  </div>
+
+                  <small> <button class="btn btn-primary" type="button" data-mdb-collapse-init data-mdb-ripple-init
+                      data-mdb-target="#collapseWidthExample" aria-expanded="false"
+                      aria-controls="collapseWidthExample">
+                      Xem thêm
+                    </button></small>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-6 mb-5">
+              <div class="d-flex align-items-start">
+                <div class="flex-shrink-0">
+                  <div class="p-3 badge-primary rounded-4">
+                    <i class="fa-solid fa-coins  text-primary"></i>
+                  </div>
+                </div>
+                <div class="flex-grow-1 ms-4">
+                  <p class="fw-bold mb-1">Giao hành tiết kiệm</p>
+                  <p class="text-muted mb-1">
+                    Giao hàng với mức phí 0 đồng
+                  </p>
+                  <div class="collapse collapse-horizontal" id="giaohang">
+                    <div style="width: 300px;">
+                      tóc độ giao hàng nhanh , mức phí thấp, đảm bảo hàng hóa được chuyển đến tay người dùng một cách an
+                      toàn
+                    </div>
+                  </div>
+                  <small><button class="btn btn-primary" type="button" data-mdb-collapse-init data-mdb-ripple-init
+                      data-mdb-target="#giaohang" aria-expanded="false" aria-controls="giaohang">
+                      Xem thêm
+                    </button></small>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-6 mb-5">
+              <div class="d-flex align-items-start">
+                <div class="flex-shrink-0">
+                  <div class="p-3 badge-primary rounded-4">
+                    <i class="fa-solid fa-truck-fast"></i>
+                  </div>
+                </div>
+                <div class="flex-grow-1 ms-4">
+                  <p class="fw-bold mb-1">Đổi trả hàng đơn giản</p>
+                  <p class="text-muted mb-1">
+                    Cam kết đổi trả hàng đơn giản nếu hàng hóa gặp lỗi
+                  </p>
+                  <div class="collapse collapse-horizontal" id="doitra">
+                    <div style="width: 300px;">
+                      Đổi trả hàng hóa - miễn phí chi phí vận chuyển cho khách hàng nếu chẳng may hàng hóa gặp lỗi hoặc
+                      hư hỏng
+                    </div>
+                  </div>
+                  <small><button class="btn btn-primary" type="button" data-mdb-collapse-init data-mdb-ripple-init
+                      data-mdb-target="#doitra" aria-expanded="false" aria-controls="doitra">
+                      Xem thêm
+                    </button></small>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-6 mb-5">
+              <div class="d-flex align-items-start">
+                <div class="flex-shrink-0">
+                  <div class="p-3 badge-primary rounded-4">
+                    <i class="fa-solid fa-phone"></i>
+                  </div>
+                </div>
+                <div class="flex-grow-1 ms-4">
+                  <p class="fw-bold mb-1">Hổ trợ nhiệt tình</p>
+                  <p class="text-muted mb-1">
+                    Hỗ trợ khách hàng tận tình, tư vấn chi tiết
+                  </p>
+                  <div class="collapse collapse-horizontal" id="help">
+                    <div style="width: 300px;">
+                      Nhân viên nhiệt tình nhất là trong công cuộc hổ trợ khách hàng
+                    </div>
+                  </div>
+                  <small><button class="btn btn-primary" type="button" data-mdb-collapse-init data-mdb-ripple-init
+                      data-mdb-target="#help" aria-expanded="false" aria-controls="help">
+                      Xem thêm
+                    </button></small>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+
+    <div class="container">
+      <h2 style="color: #f25529; text-align: center;">Đánh giá khách hàng</h2>
+      <div class="row col-lg-12 d-flex justify-content-center  align-items-center p-5">
+     
+        <% for(var i=0; i < 4 ;i++) { %>
+
+        <div class="card col-lg-2 m-3 text-center" data-aos="zoom-out-left" data-aos-duration="1700" >
+          <img src="https://mdbcdn.b-cdn.net/img/new/standard/nature/182.webp" class="card-img-top rounded-circle" alt="Sunset Over the Sea"/>
+        
+          <div class="card-body">
+            <div class="card-title">khang</div>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+          </div>
+        </div>
+
+        <% } %>
+      </div>
+    </div>
+  </main>
+  <footer>
+    <%- include('./../../components/footer.ejs'); %>
+  </footer>
+  <!-- Bootstrap JavaScript Libraries -->
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+    integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+    crossorigin="anonymous"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+    integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+    crossorigin="anonymous"></script>
+</body>
+<script>
+  AOS.init();
+</script>
+<script src="/js/index.js"></script>
+</html>
